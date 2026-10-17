@@ -1,0 +1,238 @@
+<div class="website">
+  <header class="hero">
+    <div class="logo">♡ Cozy Loops ♡</div>
+    <p class="subtitle">Handmade with love, one stitch at a time 🧶</p>
+    <nav>
+      <a href="#products">Shop</a>
+      <a href="#custom">Custom Orders</a>
+      <a href="#cart-section">My Cart</a>
+    </nav>
+  </header>
+
+  <section class="welcome">
+    <p class="eyebrow">MADE WITH LOVE ♡</p>
+    <h1>Little things, made with big love.</h1>
+    <p>Discover handmade crochet cuties or dream up something of your own!</p>
+    <a class="main-link" href="#products">Explore the collection ♡</a>
+  </section>
+
+  <section id="products" class="section">
+    <p class="eyebrow">THE LITTLE SHOP</p>
+    <h2>Our Crochet Cuties 🌷</h2>
+    <p class="intro">Pick a favourite to add it to your cart!</p>
+
+    <div class="products">
+      <article class="product-card">
+        <div class="product-art flower-art">🌷</div>
+        <h3>Crochet Flowers</h3>
+        <p>Flowers that stay lovely forever.</p>
+        <button type="button" onclick="addToCart('Crochet Flowers')">Add to cart ♡</button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art teddy-art">🧸</div>
+        <h3>Crochet Teddy</h3>
+        <p>A tiny handmade friend to keep.</p>
+        <button type="button" onclick="addToCart('Crochet Teddy')">Add to cart ♡</button>
+      </article>
+
+      <article class="product-card">
+        <div class="product-art bag-art">👜</div>
+        <h3>Crochet Bag</h3>
+        <p>A cute little bag made with care.</p>
+        <button type="button" onclick="addToCart('Crochet Bag')">Add to cart ♡</button>
+      </article>
+    </div>
+  </section>
+
+  <section id="custom" class="section custom-section">
+    <p class="eyebrow">MADE JUST FOR YOU</p>
+    <h2>♡ Create Your Custom Crochet Order ♡</h2>
+    <p class="intro">Have something special in mind? Tell me your idea!</p>
+
+    <form id="customOrderForm">
+      <label for="item">What would you like me to crochet?</label>
+      <input id="item" name="item" placeholder="e.g. a bunny, bouquet, keychain..." required>
+
+      <label for="color">What colours would you like?</label>
+      <input id="color" name="color" placeholder="e.g. baby pink and white" required>
+
+      <label for="size">Preferred size</label>
+      <input id="size" name="size" placeholder="e.g. medium, 20 cm, or not sure yet" required>
+      <p class="hint">♡ Size and materials can be discussed based on your design.</p>
+
+      <label for="deadline">When do you need it?</label>
+      <input id="deadline" name="deadline" type="date">
+
+      <label for="details">Extra details about your dream item</label>
+      <textarea id="details" name="details" rows="4" placeholder="Describe the design, style, pattern, or anything special..."></textarea>
+
+      <button class="wide-button" type="submit">Add custom request to cart ♡</button>
+    </form>
+  </section>
+
+  <section id="cart-section" class="section cart-section">
+    <p class="eyebrow">YOUR LITTLE COLLECTION</p>
+    <h2>🛒 My Shopping Cart</h2>
+    <div id="cart">Your cart is empty! 🧶</div>
+    <button class="clear-button" type="button" onclick="clearCart()">Clear cart</button>
+  </section>
+
+  <section class="section customer-section">
+    <p class="eyebrow">ALMOST THERE</p>
+    <h2>♡ Customer Details</h2>
+    <p class="intro">Add your details to review your order.</p>
+
+    <form id="orderForm">
+      <label for="customer">Your name</label>
+      <input id="customer" name="customer" placeholder="Your name" required>
+
+      <label for="email">Email address</label>
+      <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+      <label for="address">Delivery details</label>
+      <textarea id="address" name="address" rows="3" placeholder="Your delivery information" required></textarea>
+
+      <button class="wide-button" type="submit">Review my order ♡</button>
+    </form>
+
+    <div id="message" aria-live="polite"></div>
+  </section>
+
+  <footer>
+    <p>Made with ♡ and a little yarn magic.</p>
+    <p>Thank you for supporting handmade creations! 🌷</p>
+  </footer>
+</div>
+
+<section id="patterns" class="section patterns-section">
+  <p class="eyebrow">STITCH SOMETHING LOVELY</p>
+  <h2>♡ Crochet Pattern Library ♡</h2>
+  <p class="intro">
+    Find your next project, explore a little stitch map,
+    and discover video tutorials to help you along!
+  </p>
+
+  <div class="pattern-tools">
+    <label for="patternSearch">Find a pattern</label>
+    <input id="patternSearch" type="search"
+      placeholder="Search flowers, bows, bags...">
+
+    <label for="patternCategory">Choose a category</label>
+    <select id="patternCategory">
+      <option value="all">All patterns</option>
+      <option value="flowers">Flowers</option>
+      <option value="bows">Bows</option>
+      <option value="plushies">Plushies</option>
+      <option value="bags">Bags</option>
+      <option value="granny">Granny squares</option>
+      <option value="keychains">Keychains</option>
+      <option value="hats">Hats &amp; scarves</option>
+      <option value="other">Other crochet projects</option>
+    </select>
+  </div>
+
+  <div id="patternGrid" class="pattern-grid">
+
+    <article class="pattern-card" data-category="flowers" data-name="flower rose tulip daisy bouquet">
+      <div class="pattern-picture pink-picture">🌷 🌸 🌼</div>
+      <h3>Flowers &amp; Bouquets</h3>
+      <p>Make roses, tulips, daisies and cute flower bouquets.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Centre → Petals → Stem → Leaves</p>
+        <span>○ ○ ○ → 🌸</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=crochet+flower+tutorial+for+beginners" target="_blank" rel="noopener noreferrer">Watch flower tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="bows" data-name="bow hair clip ribbon coquette">
+      <div class="pattern-picture lilac-picture">🎀 💗 🎀</div>
+      <h3>Crochet Bows</h3>
+      <p>Sweet bows for hair clips, bags and accessories.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Chain → Rectangle → Wrap centre</p>
+        <span>▱ → 🎀</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=easy+crochet+bow+tutorial+beginner" target="_blank" rel="noopener noreferrer">Watch bow tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="plushies" data-name="plushie amigurumi bunny bear cat frog">
+      <div class="pattern-picture cream-picture">🐰 🧸 🐸</div>
+      <h3>Plushies &amp; Amigurumi</h3>
+      <p>Make tiny bunnies, bears, cats and cuddly friends.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Magic ring → Increase → Shape → Stuff</p>
+        <span>○ → ◉ → 🧸</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=beginner+crochet+amigurumi+plushie+tutorial" target="_blank" rel="noopener noreferrer">Watch plushie tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="bags" data-name="bag tote purse shoulder bag">
+      <div class="pattern-picture green-picture">👜 🧶 🛍️</div>
+      <h3>Bags &amp; Purses</h3>
+      <p>Create tote bags, mini purses and everyday bags.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Base → Body → Straps → Finish</p>
+        <span>▱ → ▢ → 👜</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=easy+crochet+bag+tutorial+for+beginners" target="_blank" rel="noopener noreferrer">Watch bag tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="granny" data-name="granny square blanket colorful patchwork">
+      <div class="pattern-picture yellow-picture">🟪 🟨 🟩</div>
+      <h3>Granny Squares</h3>
+      <p>Make colourful squares for blankets, bags and more.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Centre → Corners → More rounds</p>
+        <span>□ → ▣ → ▦</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=classic+granny+square+crochet+tutorial+beginner" target="_blank" rel="noopener noreferrer">Watch granny square tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="keychains" data-name="keychain charm strawberry heart star mini">
+      <div class="pattern-picture peach-picture">🍓 ⭐ 💗</div>
+      <h3>Keychains &amp; Charms</h3>
+      <p>Little strawberries, hearts, stars and bag charms.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Small shape → Details → Keyring</p>
+        <span>♡ → ✨ → 🔑</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=easy+crochet+keychain+charm+tutorial" target="_blank" rel="noopener noreferrer">Watch keychain tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="hats" data-name="hat beanie scarf headband winter">
+      <div class="pattern-picture blue-picture">🧢 🧣 🧶</div>
+      <h3>Hats &amp; Scarves</h3>
+      <p>Cosy beanies, scarves and cute headbands.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Foundation → Rows or rounds → Finish</p>
+        <span>〰️ → 🧣</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=beginner+crochet+hat+and+scarf+tutorial" target="_blank" rel="noopener noreferrer">Watch hat &amp; scarf tutorials ↗</a>
+    </article>
+
+    <article class="pattern-card" data-category="other" data-name="coasters bookmark scrunchie heart decor">
+      <div class="pattern-picture lavender-picture">📚 ☕ 💕</div>
+      <h3>Other Cute Projects</h3>
+      <p>Try coasters, bookmarks, scrunchies and decorations.</p>
+      <div class="stitch-map">
+        <strong>Mini stitch map</strong>
+        <p>Choose a shape → Add stitches → Decorate</p>
+        <span>🧶 → ✨ → ♡</span>
+      </div>
+      <a class="tutorial-link" href="https://www.youtube.com/results?search_query=easy+crochet+small+projects+for+beginners" target="_blank" rel="noopener noreferrer">Explore more tutorials ↗</a>
+    </article>
+
+  </div>
+
+  <p id="noPatterns" class="no-patterns" hidden>
+    No matching patterns found. Try another search, bestie! 💕
+  </p>
+  </section>
